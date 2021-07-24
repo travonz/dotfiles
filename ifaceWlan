@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export IFACE_WLAN=wlan0
+

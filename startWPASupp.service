@@ -1,0 +1,9 @@
+[Unit]
+Description=startWPASupp
+
+[Service]
+ExecStart=/home/bin/startWPASupp
+
+[Install]
+WantedBy=multi-user.target
+
