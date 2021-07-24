@@ -1,0 +1,7 @@
+[Settings]
+# NVIDIA
+gtk-font-name = Sans 28
+# Intel
+gtk-font-name = Sans 16
+
+
