@@ -1,0 +1,33 @@
+
+# Install ttf-hack font for alacritty
+
+colors:
+    primary:
+        background: '0x262626'
+
+font:
+    normal:
+      family: Hack
+      #family: SourceCodePro
+      style: Regular
+
+    bold:
+      family: Hack
+      #family: SourceCodePro
+      style: Bold
+
+    italic:
+      family: Hack
+      #family: SourceCodePro
+      style: Italic
+
+    size: 16.0
+
+
+mouse:
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+background_opacity: 0.8
+
