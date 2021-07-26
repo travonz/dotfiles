@@ -1,0 +1,110 @@
+# Chinese input IBUS
+export XMODIFIERS="@im=ibus"
+export GTK_IM_MODULE="ibus"
+#export QT_IM_MODULE="xim"
+export QT_IM_MODULE=ibus
+ibus-daemon -d -x
+gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FF0000'
+# Do not display the layout switch dialog
+gsettings set org.freedesktop.ibus.general switcher-delay-time '-1'
+
+# Deactive 10min blank screen which can cause Xorg to freeze
+xset s off -dpms
+
+
+# Set theme manager for Qt5
+export QT_QPA_PLATFORMTHEME=qt5ct
+# Set scale factor to increase font size
+export QT_SCALE_FACTOR=1.5
+
+# Detect video driver using xrandr screen naming
+LAPTOP_SCREEN_NVIDIA="eDP-1-1"
+LAPTOP_SCREEN_INTEL="eDP-1"
+videoDriver=`/usr/bin/xrandr |grep -e "${LAPTOP_SCREEN_NVIDIA} connected"`
+if [ -z "$videoDriver" ]
+then
+  videoDriver=`/usr/bin/xrandr |grep -e "${LAPTOP_SCREEN_INTEL} connected"`
+  if [ -z "$videoDriver" ]
+  then
+    echo "Video driver is neither Nvidia nor Intel"
+  else
+    # Intel screen naming
+    export LEFT_SCREEN="DP-1"
+    export RIGHT_SCREEN="HDMI-2"
+    export LAPTOP_SCREEN="eDP-1"
+    echo "intel" > /tmp/xavier/video_driver
+    export VIDEO_DRIVER="intel"
+  fi
+else
+  # NVIDIA screen naming
+  export LEFT_SCREEN="DP-1-1"
+  export RIGHT_SCREEN="HDMI-1-2"
+  export LAPTOP_SCREEN="eDP-1-1"
+  xrandr --setprovideroutputsource modesetting NVIDIA-0
+  xrandr --auto
+  #xrandr --dpi 96
+  echo "nvidia" > /tmp/xavier/video_driver
+  export VIDEO_DRIVER="nvidia"
+fi
+
+# Detect desktop configuration
+# NVIDIA screen naming
+#export LEFT_SCREEN="DP-1-1"
+#export RIGHT_SCREEN="HDMI-1-2"
+#export LAPTOP_SCREEN="eDP-1-1"
+# Intel screen naming
+#export LEFT_SCREEN="DP-1"
+#export RIGHT_SCREEN="HDMI-2"
+#export LAPTOP_SCREEN="eDP-1"
+
+# Virava
+DESKTOP_SCREEN=`/usr/bin/xrandr |grep -e "${RIGHT_SCREEN} connected"`
+if [ -n "$DESKTOP_SCREEN" ]
+then
+  logger "Location: Virava Chine"
+  xrandr --output ${LAPTOP_SCREEN} --off
+  xrandr --output ${RIGHT_SCREEN} --auto --primary --left-of ${LEFT_SCREEN}
+# else
+# # Not Huaguo, not Virava
+# #  DESKTOP_nvidia=`/usr/bin/xrandr |grep -e "DP-1-1 disconnected"`
+#   DESKTOP_nvidia=`/usr/bin/xrandr |grep -e "${LEFT_SCREEN} disconnected"`
+#   if [ -n "$DESKTOP_nvidia" ]
+#   then
+#     logger "Location: Nomade"
+#   else
+# # Huaguo (not Virava, not Nomade, assume it is Huaguo)
+#     logger "Location: Chine"
+# #    xrandr --output eDP-1-1 --off
+#     xrandr --output ${RIGHT_SCREEN} --auto --primary --left-of ${LEFT_SCREEN}
+# #    xrandr --output DP-1-1 --auto --primary --left-of DP-3
+#   fi
+fi
+
+
+# DESKTOP_intel=`/usr/bin/xrandr |grep -e "HDMI1 connected"`
+# if [ -n "$DESKTOP_intel" ]
+# then
+#   logger "Detected: HDMI1 connected"
+# #  xrandr --output eDP1 --off
+# fi
+
+
+
+xrdb -merge "${HOME}/.Xresources"
+
+
+
+xscreensaver -no-splash &
+volumeicon &
+xpad &
+##conky -q &
+#firefox &
+#urxvtd -q -f -o &
+## wpa_gui -t &
+redshift-gtk &
+pcmanfm -d &
+
+exec awesome
+#twm &
+#openbox
+#exec xterm
