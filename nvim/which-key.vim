@@ -30,6 +30,8 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
+let g:which_key_map['*'] = 'Search forward occurences of word under cursor'
+let g:which_key_map['#'] = 'Search backward occurences of word under cursor'
 let g:which_key_map.f =   ['RnvimrToggle'   , "Ranger" ]
 let g:which_key_map.a =   ['A'   , "Alternate source/header files" ]
 let g:which_key_map.q =   ['b'   , "Buffers" ]

@@ -1,7 +1,7 @@
 [Settings]
 # NVIDIA
-gtk-font-name = Sans 28
+gtk-font-name = Sans 24
 # Intel
-gtk-font-name = Sans 16
+#gtk-font-name = Sans 16
 
-
+gtk-icon-theme-name = "adwaita"
