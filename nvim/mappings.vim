@@ -57,6 +57,15 @@ vnoremap <Leader>ss :s///gc<Left><Left><Left>
 "cnoremap kj <esc>
 "vnoremap kj <esc>
 
+" Keep it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Add jump > 5 lines to jump list so it can be followed by Ctrl-O and Ctrl-I
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
 " Keep selection after tabbing
 vnoremap < <gv
 vnoremap > >gv

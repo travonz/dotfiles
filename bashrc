@@ -20,7 +20,12 @@ alias l='ls --color=auto -l -h'
 alias ls='ls --color=auto'
 alias hsk='libreoffice /home/xavier/Documents/perso/HSK/vocabulary.ods &'
 alias pp="pwd | xclip -rmlastnl -selection p;pwd | tr -d '\n';echo \" copied in primary clipboard\""
+#alias file='file -S'
 
+ASTRILL_LIBLSP=/usr/lib/lib/liblsp.so
+#alias firefox='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/firefox'
+#alias thunderbird='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/thunderbird'
+#alias pacman='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/pacman'
 alias call='/usr/bin/cal `date +%Y`'
 
 alias trash-size='du -sh ~/.local/share/Trash'
@@ -28,7 +33,7 @@ alias trash-size='du -sh ~/.local/share/Trash'
 alias e='nvim'
 alias evrc='nvim ~/.config/nvim/init.vim'
 alias eawrc='nvim ~/.config/awesome/rc.lua'
-alias ghpass='keepassxc-cli show  -a Password /home/xavier/.config/keepassxc/passwdDatabase.kdbx Internet/GitHub'
+#alias ghpass='keepassxc-cli show  -a Password /home/xavier/.config/keepassxc/passwdDatabase.kdbx Internet/GitHub'
 #alias ms='man -l /home/vault/shortcut.1'
 #alias fox='cd ~/pkg/fox/fox'
 
@@ -40,4 +45,5 @@ alias of='source ~/OpenFOAM/OpenFOAM-8/etc/bashrc'
 export TERM="alacritty"
 #export LC_CTYPE="en_US.UTF-8"
 export EDITOR=nvim
+
 

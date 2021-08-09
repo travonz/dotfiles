@@ -1,0 +1,40 @@
+/* userChrome.css */
+/* Change focused tab color, userful for dark mode */
+
+/*  https://support.mozilla.org/en-US/questions/1282095
+ *  https://www.userchrome.org/how-create-userchrome-css.html
+ *  "userChrome.css" to be put in "/home/xavier/.mozilla/firefox/jig1eqpc.default-release/chrome/"
+ *  Then type "about:config" in Firefox's address bar, search for
+ *  "toolkit.legacyUserProfileCustomizations.stylesheets" and swith value to true */
+
+.tabbrowser-tab[selected="true"] .tab-background {
+  background: #369 none !important;
+}
+
+/* Other methods than currently does not work */
+
+/* .tab-background[selected="true"] {
+      background-color: #3B3B3B !important;
+    }
+*/
+/*
+.tab-line[selected="true"] {
+      background-color: red !important;
+   }
+*/
+/*
+  .tab-background[selected="true"] {
+      background-color: #3B3B3B !important;
+      background-image: none !important;
+    }
+*/
+
+/* scrollbar-color: yellow blue; */
+
+/* Does not work so far */
+.scroller {
+  width: 300px;
+  height: 100px;
+  overflow-y: scroll;
+  scrollbar-color: yello blue;
+}

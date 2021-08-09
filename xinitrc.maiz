@@ -4,6 +4,7 @@ export GTK_IM_MODULE="ibus"
 #export QT_IM_MODULE="xim"
 export QT_IM_MODULE=ibus
 ibus-daemon -d -x
+# Set ibus tray icon red
 gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#FF0000'
 # Do not display the layout switch dialog
 gsettings set org.freedesktop.ibus.general switcher-delay-time '-1'
@@ -47,21 +48,12 @@ else
   export VIDEO_DRIVER="nvidia"
 fi
 
-# Detect desktop configuration
-# NVIDIA screen naming
-#export LEFT_SCREEN="DP-1-1"
-#export RIGHT_SCREEN="HDMI-1-2"
-#export LAPTOP_SCREEN="eDP-1-1"
-# Intel screen naming
-#export LEFT_SCREEN="DP-1"
-#export RIGHT_SCREEN="HDMI-2"
-#export LAPTOP_SCREEN="eDP-1"
 
-# Virava
+# Setup screen setup according to detected configuration
 DESKTOP_SCREEN=`/usr/bin/xrandr |grep -e "${RIGHT_SCREEN} connected"`
 if [ -n "$DESKTOP_SCREEN" ]
 then
-  logger "Location: Virava Chine"
+  logger "Location: Virava or Maiz"
   xrandr --output ${LAPTOP_SCREEN} --off
   xrandr --output ${RIGHT_SCREEN} --auto --primary --left-of ${LEFT_SCREEN}
 # else
@@ -78,6 +70,8 @@ then
 #     xrandr --output ${RIGHT_SCREEN} --auto --primary --left-of ${LEFT_SCREEN}
 # #    xrandr --output DP-1-1 --auto --primary --left-of DP-3
 #   fi
+else
+  logger "Location: Nomade"
 fi
 
 
@@ -92,8 +86,6 @@ fi
 
 xrdb -merge "${HOME}/.Xresources"
 
-
-
 xscreensaver -no-splash &
 volumeicon &
 xpad &
@@ -103,6 +95,10 @@ xpad &
 ## wpa_gui -t &
 redshift-gtk &
 pcmanfm -d &
+
+# Put system to sleep (suspend-to-ram) afer 30min of inactivity
+/home/bin/autolock &
+#xautolock -time 30 -locker "/home/bin/sle" -detectsleep &
 
 exec awesome
 #twm &
