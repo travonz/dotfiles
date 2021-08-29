@@ -1,6 +1,8 @@
 
 DOCDIR=~/Documents
 
+PS1='\[\e[1;36m\]\u\[\e[m\]@\h:\[\e[0;33m\]\w\[\e[m\]\$ '
+
 alias mv='mv -i'
 #alias rm='rm -i'
 alias rm='echo "Use del or /bin/rm"'
