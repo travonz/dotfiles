@@ -28,7 +28,7 @@ ASTRILL_LIBLSP=/usr/lib/lib/liblsp.so
 #alias firefox='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/firefox'
 #alias thunderbird='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/thunderbird'
 #alias pacman='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/pacman'
-alias call='/usr/bin/cal `date +%Y`'
+#alias call='/usr/bin/cal -y'
 
 alias trash-size='du -sh ~/.local/share/Trash'
 

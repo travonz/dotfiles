@@ -64,6 +64,12 @@ let g:alternateExtensions_h = "cc,cpp,cxx,c,CC"
 "  -----  majutsushi/tagbar  ---------------------------------------------
 let g:tagbar_autofocus = 1
 
+"  -----  rhysd/vim-clang-format  ---------------------------------------------
+"  Look for .clang-format or _clang-format file
+let g:clang_format#detect_style_file = 1
+" Does nothing if .clang-format file is not found
+let g:clang_format#enable_fallback_style = 0
+
 
 fun! TrimWhitespace()
     let l:save = winsaveview()

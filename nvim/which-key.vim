@@ -48,4 +48,4 @@ let g:which_key_map.p =   {
             \ 'r'       : 'CocSearch word under cursor',
             \ 'h'       : 'Print help word under cursor',
             \ }
-
+let g:which_key_map['y'] = 'Format source with clang-format'

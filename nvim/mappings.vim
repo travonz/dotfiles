@@ -72,6 +72,9 @@ vnoremap > >gv
 
 nnoremap <Leader>h :sp<BAR>:view /home/vault/customVimKeyBindings<CR>
 
+"map <Leader>y :py3f /home/dot/nvim/clang-format.py<cr>
+map <Leader>y :ClangFormat<cr>
+
 " HARDMODE, for educational purpose
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
 noremap <Up> <NOP>

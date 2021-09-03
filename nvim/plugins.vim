@@ -30,6 +30,9 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 " pip3 install --upgrade pynvim
 " Dependency for rnvimr: pip3 install ueberzug
 
+" Clang-format vim integration
+Plug 'rhysd/vim-clang-format'
+
 " Plug 'preservim/nerdcommenter' " Comment and uncomment lines TO BE TESTED
 
 " Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
