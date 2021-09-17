@@ -125,8 +125,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="262.532"
-         height="100.787" />
+         width="2040"
+         height="160" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -337,8 +337,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="332.598"
-       y="771.024"
+       x="740"
+       y="655"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -517,7 +517,7 @@
   </group>
   <group
      id="colorselector"
-     page="0" />
+     page="1" />
   <group
      id="embedded">
     <group
@@ -542,7 +542,8 @@
        id="textandfont" />
     <group
        id="transformation"
-       applyseparately="0" />
+       applyseparately="0"
+       rotateCounterClockwise="1" />
     <group
        id="align" />
     <group
@@ -582,18 +583,18 @@
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/xavier/Documents/6.Manufacturing/2.MfgInstructions/svg"
+       path="/home/xavier/Documents/1.RnD/5.CaseStudy/paramotor"
        use_current_dir="1" />
     <group
        id="save_copy"
-       default=""
+       default="org.inkscape.output.pdf.cairorenderer"
        append_extension="1"
        enable_preview="1"
-       path="" />
+       path="/home/xavier/Documents/1.RnD/5.CaseStudy/paramotor" />
     <group
        id="open"
        enable_preview="1"
-       path="/home/xavier/Documents/6.Manufacturing/2.MfgInstructions/svg/" />
+       path="/home/dot/awesome.taf/themes/travonz/icons/" />
     <group
        id="import"
        enable_preview="1"
@@ -609,7 +610,8 @@
     <group
        id="clonetiler" />
     <group
-       id="gridtiler" />
+       id="gridtiler"
+       SpacingType="20" />
     <group
        id="extension-error"
        show-on-startup="0" />
@@ -932,10 +934,11 @@
        scaleLineHeightFromFontSIze="1" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5" />
   <group
      id="desktop"
-     style="fill:#c6ffff;stroke:#808080;stroke-width:0.75590551;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:13.33333333px">
+     style="fill:none;stroke:#000000;stroke-width:1.88976378;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:13.33333333px;stroke-linecap:round;stroke-linejoin:round">
     <group
        width="640"
        height="480"

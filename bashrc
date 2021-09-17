@@ -22,6 +22,9 @@ alias l='ls --color=auto -l -h'
 alias ls='ls --color=auto'
 alias hsk='libreoffice /home/xavier/Documents/perso/HSK/vocabulary.ods &'
 alias pp="pwd | xclip -rmlastnl -selection p;pwd | tr -d '\n';echo \" copied in primary clipboard\""
+alias pp1="xclip -rmlastnl -o -selection primary 2> /dev/null"
+alias pp2="xclip -rmlastnl -o -selection secondary 2> /dev/null"
+alias pp3="xclip -rmlastnl -o -selection clipboard 2> /dev/null"
 #alias file='file -S'
 
 ASTRILL_LIBLSP=/usr/lib/lib/liblsp.so

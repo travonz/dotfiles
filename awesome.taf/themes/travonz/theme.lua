@@ -112,7 +112,8 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/m
 
 -- theme.wallpaper = themes_path.."travonz/timezones.png"
 -- theme.wallpaper = "/home/xavier/.config/awesome/themes/travonz/wallpaper/planet_clouds_light_star_94996_1920x1080.jpg"
-theme.wallpaper = "/home/xavier/.config/awesome/themes/travonz/wallpaper/alloy_background_black_1920x1080.jpg"
+-- theme.wallpaper = "/home/xavier/.config/awesome/themes/travonz/wallpaper/alloy_background_black_1920x1080.jpg"
+theme.wallpaper = "/home/xavier/.config/awesome/themes/travonz/wallpaper/solar_eclipse_april_2014_antarctica_australia_indonesia_93004_1920x1080.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

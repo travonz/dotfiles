@@ -110,10 +110,10 @@ myutilitymenu = awful.menu({ items = {
    { "&o hotkeys", function() return false, hotkeys_popup.show_help end, "/home/xavier/.config/awesome/themes/travonz/icons/hotkeys.svg"},
    { "&p screenshot", function () awful.util.spawn("/home/bin/screenshot") end, "/home/xavier/.config/awesome/themes/travonz/icons/screenshot.svg"},
    { "&f firefox S/C", function () awful.util.spawn("/home/bin/processSTOPCONT firefox") end, "/home/xavier/.config/awesome/themes/travonz/icons/startstop.svg"},
+   { "quit", function() awesome.quit() end, "/home/xavier/.config/awesome/themes/travonz/icons/exit.svg"},
    { "lock screen", function () awful.util.spawn("/usr/bin/xscreensaver-command -lock") end, "/home/xavier/.config/awesome/themes/travonz/icons/lock.svg"},
-   { "&sleep", function () awful.util.spawn("sudo /home/bin/sle") end, "/home/xavier/.config/awesome/themes/travonz/icons/sleep.svg"},
    { "restart", awesome.restart, "/home/xavier/.config/awesome/themes/travonz/icons/restart.svg" },
-   { "quit", function() awesome.quit() end, "/home/xavier/.config/awesome/themes/travonz/icons/exit.svg"}
+   { "&sleep", function () awful.util.spawn("sudo /home/bin/sle") end, "/home/xavier/.config/awesome/themes/travonz/icons/sleep.svg"}
 }
 })
 
@@ -133,9 +133,9 @@ mymainmenu = awful.menu({ items = {
 { "&filemanager", "pcmanfm", "/home/xavier/.config/awesome/themes/travonz/icons/fileManager.svg" },
 { "&speedcrunch", "speedcrunch", "/home/xavier/.config/awesome/themes/travonz/icons/calculator.svg" },
 { "&virtualbox", "VirtualBox", "/home/xavier/.config/awesome/themes/travonz/icons/virtualization.svg" },
--- { "&text editor", "tea", "/usr/share/pixmaps/tea.png" },
 { "&evince", "evince", "/home/xavier/.config/awesome/themes/travonz/icons/pdf.svg" },
 { "&libreoffice", "libreoffice", "/home/xavier/.config/awesome/themes/travonz/icons/libreoffice.svg" },
+{ "xsane scanner", "xsane", "/home/xavier/.config/awesome/themes/travonz/icons/scanner.svg" },
 --{ "sk&ype", "skype", "/usr/share/icons/hicolor/16x16/apps/skype.png" },
 { "gimp", "gimp", "/home/xavier/.config/awesome/themes/travonz/icons/gimp.svg" },
 { "&inkscape", "inkscape", "/home/xavier/.config/awesome/themes/travonz/icons/inkscape.svg" },
@@ -144,8 +144,8 @@ mymainmenu = awful.menu({ items = {
 { "avidemux", "avidemux3_qt4", "/home/xavier/.config/awesome/themes/travonz/icons/video.svg" },
 --{ "&wifi gui", "wpa_gui", "/home/xavier/.config/awesome/themes/travonz/icons/wifi.svg" },
 { "&vlc", "vlc", "/home/xavier/.config/awesome/themes/travonz/icons/vlc.svg" },
-{ "firefox", "/usr/bin/firefox", "/home/xavier/.config/awesome/themes/travonz/icons/webBrowser.svg" },
 { "thunderbird", "/usr/bin/thunderbird", "/home/xavier/.config/awesome/themes/travonz/icons/mail.svg" },
+{ "firefox", "/usr/bin/firefox", "/home/xavier/.config/awesome/themes/travonz/icons/webBrowser.svg" },
 --{ "irc", "/usr/bin/alacritty -e weechat", "/home/xavier/.config/awesome/themes/travonz/icons/irc.svg" },
 --{ "kee&pass", "/usr/bin/keepassxc", "/home/xavier/.config/awesome/themes/travonz/icons/key.svg" },
 --{ "&music", "/usr/bin/alacritty -e ncmpcpp", "/home/xavier/.config/awesome/themes/travonz/icons/music.svg" },
