@@ -141,6 +141,7 @@ mymainmenu = awful.menu({ items = {
 { "&inkscape", "inkscape", "/home/xavier/.config/awesome/themes/travonz/icons/inkscape.svg" },
 { "scribus", "scribus", "/home/xavier/.config/awesome/themes/travonz/icons/scribus.svg" },
 { "blender", "blender", "/home/xavier/.config/awesome/themes/travonz/icons/blender.svg" },
+{ "&zwcad", "sh /opt/apps/com.zwsoft.zwcadm2022/files/ZWCADRUN.sh", "/home/xavier/.config/awesome/themes/travonz/icons/ZWCAD.svg" },
 { "avidemux", "avidemux3_qt4", "/home/xavier/.config/awesome/themes/travonz/icons/video.svg" },
 --{ "&wifi gui", "wpa_gui", "/home/xavier/.config/awesome/themes/travonz/icons/wifi.svg" },
 { "&vlc", "vlc", "/home/xavier/.config/awesome/themes/travonz/icons/vlc.svg" },

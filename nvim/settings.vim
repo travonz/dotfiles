@@ -12,7 +12,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nowrap
+set wrap
 
 set noswapfile
 set nobackup			" Do not make a backup before overwriting a file, recommanded by coc

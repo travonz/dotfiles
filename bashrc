@@ -1,5 +1,4 @@
 
-DOCDIR=~/Documents
 
 PS1='\[\e[1;36m\]\u\[\e[m\]@\h:\[\e[0;33m\]\w\[\e[m\]\$ '
 
@@ -15,17 +14,21 @@ PATH=$PATH:/home/bin
 # Set bash to vi mode
 set -o vi
 
-export d=$DOCDIR
-alias cdd='cd $DOCDIR'
+#alias l='ls --color=auto -l -h'
+#alias ls='ls --color=auto'
+alias ls='exa'
+alias l='exa -l'
+alias la='exa -a'
+alias lla='exa -la'
 
-alias l='ls --color=auto -l -h'
-alias ls='ls --color=auto'
-alias hsk='libreoffice /home/xavier/Documents/perso/HSK/vocabulary.ods &'
 alias pp="pwd | xclip -rmlastnl -selection p;pwd | tr -d '\n';echo \" copied in primary clipboard\""
 alias pp1="xclip -rmlastnl -o -selection primary 2> /dev/null"
 alias pp2="xclip -rmlastnl -o -selection secondary 2> /dev/null"
 alias pp3="xclip -rmlastnl -o -selection clipboard 2> /dev/null"
 #alias file='file -S'
+
+# get error messages from journalctl
+alias jctl="sudo journalctl -p 3 -xb"
 
 ASTRILL_LIBLSP=/usr/lib/lib/liblsp.so
 #alias firefox='echo " *** Load $ASTRILL_LIBLSP for ASTRILL ***";export LD_PRELOAD=$ASTRILL_LIBLSP;/usr/bin/firefox'
@@ -51,4 +54,5 @@ export TERM="alacritty"
 #export LC_CTYPE="en_US.UTF-8"
 export EDITOR=nvim
 
-
+# For fzf to always searches in HOME directory (fd nust be installed)
+export FZF_DEFAULT_COMMAND="fd . $HOME"
