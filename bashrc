@@ -41,7 +41,6 @@ alias trash-size='du -sh ~/.local/share/Trash'
 alias e='nvim'
 alias evrc='nvim ~/.config/nvim/init.vim'
 alias eawrc='nvim ~/.config/awesome/rc.lua'
-#alias ghpass='keepassxc-cli show  -a Password /home/xavier/.config/keepassxc/passwdDatabase.kdbx Internet/GitHub'
 #alias ms='man -l /home/vault/shortcut.1'
 #alias fox='cd ~/pkg/fox/fox'
 
