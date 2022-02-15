@@ -5,10 +5,20 @@
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/mappings.vim
-source $HOME/.config/nvim/session.vim
-source $HOME/.config/nvim/coc.vim
+
+source $HOME/.config/nvim/startify.vim
+" session.vim replace by startify
+"source $HOME/.config/nvim/session.vim
+
+source $HOME/.config/nvim/nvim-lspconfig.vim
+" Replace by nvim-lspconfig
+"source $HOME/.config/nvim/coc.vim
+
+source $HOME/.config/nvim/autocomplete.vim
+
 source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/hexokinase.vim
+source $HOME/.config/nvim/treesitter.vim
 
 " set mouse=a
 
