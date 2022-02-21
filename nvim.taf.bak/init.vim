@@ -20,8 +20,6 @@ source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/hexokinase.vim
 source $HOME/.config/nvim/treesitter.vim
 
-source $HOME/.config/nvim/telescope.vim
-
 " set mouse=a
 
 

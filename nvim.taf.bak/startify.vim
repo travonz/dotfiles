@@ -15,5 +15,3 @@ let g:startify_lists = [
             \ ]
 
 let g:startify_session_persistence = 1
-
-let g:startify_custom_header = ['                    我是夏维尔']
