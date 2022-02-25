@@ -40,12 +40,12 @@ nnoremap <M-l> :vertical resize +2<CR>
 ":nnoremap <Leader>e :Ag -G '.*\.(h\|cc)'<Space>
 ":nnoremap <expr><Leader>E ":Ag -G '.*\.(h\|cc)' " .expand("<cword>")
 " nnoremap <Leader>F :Files<CR>
- nnoremap <expr><Leader>e ":Rg " .expand("<cword>")
- nnoremap <expr><Leader>E ":Lines " .expand("<cword>")
+" nnoremap <expr><Leader>e ":Rg " .expand("<cword>")
+" nnoremap <expr><Leader>E ":Lines " .expand("<cword>")
 " nnoremap <expr><Leader>E ":BLines " .expand("<cword>")
 
 " Open the file under cursor with fzf
-nnoremap <expr>gc ":FZF -q " .expand("<cfile>")
+"nnoremap <expr>gc ":FZF -q " .expand("<cfile>")
 
 " Substitute word under cursor
 nnoremap <Leader>ss :%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><Left>
@@ -71,6 +71,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap <Leader>h :sp<BAR>:view /home/vault/customVimKeyBindings<CR>
+noremap <space>z :TagbarToggle<CR>
 
 "map <Leader>y :py3f /home/dot/nvim/clang-format.py<cr>
 map <Leader>y :ClangFormat<cr>

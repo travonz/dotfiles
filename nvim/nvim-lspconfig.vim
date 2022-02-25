@@ -5,25 +5,35 @@ local opts = { noremap=true }
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.api.nvim_set_keymap('n', '<space>e', ':lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[d', ':lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']d', ':lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>q', ':lua vim.diagnostic.setloclist()<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<space>e', ':lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vp', ':lua vim.diagnostic.goto_prev()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vn', ':lua vim.diagnostic.goto_next()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vll', ':lua vim.diagnostic.setloclist()<CR>', opts)
+--   nnoremap <leader>vll :call LspLocationList()<CR>
+--       " lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
 
 
-vim.api.nvim_set_keymap('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts )
-vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-k>', ':lua vim.lsp.buf.signature_help()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>wa', ':lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>wr', ':lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>wl', ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>D', ':lua vim.lsp.buf.type_definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>rn', ':lua vim.lsp.buf.rename()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>ca', ':lua vim.lsp.buf.code_action()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>f', ':lua vim.lsp.buf.formatting()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vD', ':lua vim.lsp.buf.declaration()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vd', ':lua vim.lsp.buf.definition()<CR>', opts )
+vim.api.nvim_set_keymap('n', '<space>vh', ':lua vim.lsp.buf.hover()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vi', ':lua vim.lsp.buf.implementation()<CR>', opts)
+
+vim.api.nvim_set_keymap('n', '<space>vsh', ':lua vim.lsp.buf.signature_help()<CR>', opts)
+
+--vim.api.nvim_set_keymap('n', '<space>wa', ':lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+--vim.api.nvim_set_keymap('n', '<space>wr', ':lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+--vim.api.nvim_set_keymap('n', '<space>wl', ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+--vim.api.nvim_set_keymap('n', '<space>D', ':lua vim.lsp.buf.type_definition()<CR>', opts)
+
+vim.api.nvim_set_keymap('n', '<space>vrn', ':lua vim.lsp.buf.rename()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vca', ':lua vim.lsp.buf.code_action()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>vrr', ':lua vim.lsp.buf.references()<CR>', opts)
+--vim.api.nvim_set_keymap('n', '<space>f', ':lua vim.lsp.buf.formatting()<CR>', opts)
+
+vim.api.nvim_set_keymap('n', '<space>a', ':ClangdSwitchSourceHeader<CR>', opts)
+
+--   nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -52,7 +62,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'sumneko_lua', 'texlab', 'bashls', 'pyright', 'clangd' } --, 'tsserver' }
+local servers = { 'foam_ls', 'vimls', 'sumneko_lua', 'texlab', 'bashls', 'pyright', 'clangd' } --, 'tsserver' }
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -62,6 +72,17 @@ for _, lsp in pairs(servers) do
             }
         }
 end
+
+require'lspconfig'.foam_ls.setup {
+    cmd = { "foam-ls", "--stdio" },
+    filetypes = { "foam", "OpenFOAM" },
+    root_dir = function(path)
+            if util.path.exists(util.path.join(path, 'system', 'controlDict')) then
+              return path
+            end
+          end
+}
+
 
 -- In case of trouble uncomment the following line to print debugging information
 -- vim.lsp.set_log_level("debug")

@@ -14,7 +14,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'rhysd/vim-clang-format'
 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/a.vim'
+"Plug 'vim-scripts/a.vim'
 Plug 'majutsushi/tagbar'
 
 " Change to folke/which-key.nvim
@@ -31,6 +31,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 "Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
 
+" Ranger
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 " Dependency for rnvimr: https://github.com/neovim/pynvim
 " Anytime you upgrade Neovim, make sure to upgrade pynvim as well:
@@ -40,7 +41,7 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 " Language Server Protocol
 Plug 'neovim/nvim-lspconfig'
 " This tiny plugin adds vscode-like pictograms to neovim built-in lsp
-" Install ttf-nerd-fonts-symbols ???
+" Install ttf-nerd-fonts-symbols
 Plug 'onsails/lspkind-nvim'
 
 " Auto-complete
