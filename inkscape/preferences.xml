@@ -601,7 +601,7 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/xavier/Documents/8.Presentations/res/cargo/"
+       path="/tmp/"
        ask="1"
        ask_svg="1"
        link="embed"
