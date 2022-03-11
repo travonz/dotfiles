@@ -1,19 +1,38 @@
+lua << EOF
+
+helpString = "Custom mapping" -- Global variable to save keymap descriptions
+function customMapping(mode, keymap, func, opts, description)
+    vim.api.nvim_set_keymap(mode, keymap, func, opts)
+    helpString = helpString .. "\n" .. keymap .. " -> " .. description
+end
+
+customMapping('n', '<space>q', ':bd<CR>', { noremap = true }, "Delete current buffer")
+customMapping('n', '<space>z', ':TagbarToggle<CR>', { noremap = true }, "Toggle Tag bar")
+customMapping('n', '<space>g', ':RnvimrToggle<CR>', { noremap = true }, "Ranger")
+customMapping('n', '<space>l', ':nohlsearch<CR>', { noremap = true }, "Disable highlight search")
+customMapping('n', '<TAB>', ':bnext<CR>', { noremap = true }, "Jump to next buffer")
+customMapping('n', '<S-TAB>', ':bprevious<CR>', { noremap = true }, "Jump to previous buffer")
+customMapping('n', '<space>y', ':ClangFormat<CR>', { noremap = true }, "Code format with ClangFormat")
+customMapping('n', '<space>h', ':lua print(helpString)<CR>', { noremap = true }, "Print this custom keymap list")
+
+
+EOF
+
 "map <leader>f :RnvimrToggle<CR>
 
 " ----- 'liuchengxu/vim-wich-key' -----
 "nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '\'<CR>
 "vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '\'<CR>
 
-"nmap <Leader>a :A<CR> " Alternate source/header files
 
 "nmap <Leader>z :TagbarToggle<CR>
 
 " Disable highlight search
-nmap <Leader>l :nohlsearch<CR>
+" nmap <Leader>l :nohlsearch<CR>
 
 " Buffer navigation
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
+"nnoremap <TAB> :bnext<CR>
+"nnoremap <S-TAB> :bprevious<CR>
 " noremap <C-k>     :bnext<CR>
 " inoremap <C-k>     <Esc>:bnext<CR>
 " noremap <C-j>     :bprev<CR>
@@ -70,11 +89,10 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <Leader>h :sp<BAR>:view /home/vault/customVimKeyBindings<CR>
-noremap <space>z :TagbarToggle<CR>
+"nnoremap <Leader>h :sp<BAR>:view /home/vault/customVimKeyBindings<CR>
 
 "map <Leader>y :py3f /home/dot/nvim/clang-format.py<cr>
-map <Leader>y :ClangFormat<cr>
+"map <Leader>y :ClangFormat<cr>
 
 " HARDMODE, for educational purpose
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/

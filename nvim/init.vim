@@ -41,7 +41,7 @@ set background=dark
 
 " ----- vim-airline settings -----------------
 set laststatus=2 " Always show status bar
-let g:airline#extensions#tabline#enabled = 1 " Show airline for tabs too
+"let g:airline#extensions#tabline#enabled = 1 " Show airline for tabs too
 
 
 " ------ norcalli/nvim-colorizer.lua -----
@@ -68,9 +68,9 @@ let g:rnvimr_action = {
 
 
 " -----  vim-script/a.vim
-let g:alternateExtensions_cc = "h"
-let g:alternateNoDefaultAlternate = 1
-let g:alternateExtensions_h = "cc,cpp,cxx,c,CC"
+"let g:alternateExtensions_cc = "h"
+"let g:alternateNoDefaultAlternate = 1
+"let g:alternateExtensions_h = "cc,cpp,cxx,c,CC"
 
 
 "  -----  majutsushi/tagbar  ---------------------------------------------
