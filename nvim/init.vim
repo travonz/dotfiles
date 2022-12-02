@@ -22,14 +22,16 @@ source $HOME/.config/nvim/treesitter.vim
 
 source $HOME/.config/nvim/telescope.vim
 
+source $HOME/.config/nvim/nvim-gdb.vim
+
 " set mouse=a
 
 
 "let g:netrw_browse_split = 4 " act like "P": Open in previous window
 "let g:netrw_browse_split = 0 " Open in the same window
-let g:netrw_banner = 0
-let g:netrw_winsize = 20
-let g:netrw_list_hide= '.*\.swp,.*\.o,.*\.bak'
+"let g:netrw_banner = 0
+"let g:netrw_winsize = 20
+let g:netrw_list_hide= '^\.'
 
 
 " ----- gruvbox-community/gruvbox ------
@@ -60,7 +62,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 " ----- 'kevinhwang91/rnvimr' -----
 let g:rnvimr_enable_picker = 1      " Ranger to be hidden after picking a file
 let g:rnvimr_draw_border = 1
-let g:rnvimr_ranger_cmd = 'ranger --cmd="source $HOME/.config/ranger/rc.conf"'
+let g:rnvimr_ranger_cmd = ['ranger', '--cmd=source $HOME/.config/ranger/rc.conf']
 let g:rnvimr_presets = [{'width': 0.900, 'height': 0.900}]
 let g:rnvimr_action = {
             \ '<Enter>': 'NvimEdit tabedit',

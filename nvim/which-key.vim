@@ -32,19 +32,19 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['*'] = 'Search forward occurences of word under cursor'
 let g:which_key_map['#'] = 'Search backward occurences of word under cursor'
-let g:which_key_map.f =   ['RnvimrToggle'   , "Ranger" ]
+"let g:which_key_map.f =   ['RnvimrToggle'   , "Ranger" ]
 "let g:which_key_map.b =   ['Buffers'   , "Buffers" ]
-let g:which_key_map.q =   ['bd'   , "Delete buffer" ]
-let g:which_key_map.z =   ['TagbarToggle'   , "Toggle Tagbar" ]
-let g:which_key_map.l = 'Disable highlight search'
+"let g:which_key_map.q =   ['bd'   , "Delete buffer" ]
+"let g:which_key_map.z =   ['TagbarToggle'   , "Toggle Tagbar" ]
+"let g:which_key_map.l = 'Disable highlight search'
 "let g:which_key_map.F =   ['Files'   , "Find file" ]
 "let g:which_key_map.e =   'Find word under cursor in files'
 "let g:which_key_map.E =   'Find word under cursor in buffers'
-let g:which_key_map['ss'] = 'Substitute word (under cursor if any)'
-let g:which_key_map.h =   'View Custom Key Bindings'
-let g:which_key_map.p =   {
-            \ 'name'    : '+Search in project',
-            \ 'r'       : 'CocSearch word under cursor',
-            \ 'h'       : 'Print help word under cursor',
-            \ }
-let g:which_key_map['y'] = 'Format source with clang-format'
+"let g:which_key_map['ss'] = 'Substitute word (under cursor if any)'
+"let g:which_key_map.h =   'View Custom Key Bindings'
+"let g:which_key_map.p =   {
+"            \ 'name'    : '+Search in project',
+"            \ 'r'       : 'CocSearch word under cursor',
+"            \ 'h'       : 'Print help word under cursor',
+"            \ }
+"let g:which_key_map['y'] = 'Format source with clang-format'

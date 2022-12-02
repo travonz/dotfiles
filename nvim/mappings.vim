@@ -1,5 +1,13 @@
 lua << EOF
 
+-- :%bd    close all buffers
+-- :e #    reopen last closed buffer
+
+-- Search an replace string in files
+-- <Space>-s       Search with Telescope
+-- C-q             Send Telescope search output to quickfix
+-- Replace string  :cdo s/pattern/substitute/gc
+
 helpString = "Custom mapping" -- Global variable to save keymap descriptions
 function customMapping(mode, keymap, func, opts, description)
     vim.api.nvim_set_keymap(mode, keymap, func, opts)
@@ -13,9 +21,10 @@ customMapping('n', '<space>l', ':nohlsearch<CR>', { noremap = true }, "Disable h
 customMapping('n', '<TAB>', ':bnext<CR>', { noremap = true }, "Jump to next buffer")
 customMapping('n', '<S-TAB>', ':bprevious<CR>', { noremap = true }, "Jump to previous buffer")
 customMapping('n', '<space>y', ':ClangFormat<CR>', { noremap = true }, "Code format with ClangFormat")
+customMapping('n', '<space>k', ':Ex<CR>', { noremap = true }, "Open netrw")
 customMapping('n', '<space>h', ':lua print(helpString)<CR>', { noremap = true }, "Print this custom keymap list")
-
-
+customMapping('n', '<space>pr', ':%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><Left>', { noremap = true }, "Substitute word under cursor (normale mode)")
+customMapping('v', '<space>pr', ':s///gc<Left><Left><Left>', { noremap = true }, "Substitute word under cursor (visual mode)")
 EOF
 
 "map <leader>f :RnvimrToggle<CR>
@@ -67,9 +76,9 @@ nnoremap <M-l> :vertical resize +2<CR>
 "nnoremap <expr>gc ":FZF -q " .expand("<cfile>")
 
 " Substitute word under cursor
-nnoremap <Leader>ss :%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><Left>
+" nnoremap <Leader>ss :%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><Left>
 " Substitute word
-vnoremap <Leader>ss :s///gc<Left><Left><Left>
+" vnoremap <Leader>ss :s///gc<Left><Left><Left>
 
 " remap <esc> in insert, command and visual modes
 "inoremap kj <esc>

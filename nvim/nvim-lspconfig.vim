@@ -25,7 +25,8 @@ vim.api.nvim_set_keymap('n', '<space>vsh', ':lua vim.lsp.buf.signature_help()<CR
 --vim.api.nvim_set_keymap('n', '<space>wl', ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 --vim.api.nvim_set_keymap('n', '<space>D', ':lua vim.lsp.buf.type_definition()<CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<space>vrn', ':lua vim.lsp.buf.rename()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>r', ':lua vim.lsp.buf.rename()<CR>', opts)
+
 vim.api.nvim_set_keymap('n', '<space>vca', ':lua vim.lsp.buf.code_action()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>vrr', ':lua vim.lsp.buf.references()<CR>', opts)
 --vim.api.nvim_set_keymap('n', '<space>f', ':lua vim.lsp.buf.formatting()<CR>', opts)
@@ -62,7 +63,9 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'foam_ls', 'vimls', 'sumneko_lua', 'texlab', 'bashls', 'pyright', 'clangd' } --, 'tsserver' }
+-- Install: yarn global add vim-language-server
+-- Install: npm install foam-language-server
+local servers = {'vimls', 'sumneko_lua', 'texlab', 'bashls', 'pyright', 'clangd' } --, 'tsserver' } 'foam_ls' (foam_ls does not work)
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -73,15 +76,15 @@ for _, lsp in pairs(servers) do
         }
 end
 
-require'lspconfig'.foam_ls.setup {
-    cmd = { "foam-ls", "--stdio" },
-    filetypes = { "foam", "OpenFOAM" },
-    root_dir = function(path)
-            if util.path.exists(util.path.join(path, 'system', 'controlDict')) then
-              return path
-            end
-          end
-}
+--require'lspconfig'.foam_ls.setup {
+--    cmd = { "foam-ls", "--stdio" },
+--    filetypes = { "foam", "OpenFOAM" },
+--    root_dir = function(path)
+--            if util.path.exists(util.path.join(path, 'system', 'controlDict')) then
+--              return path
+--            end
+--          end
+--}
 
 
 -- In case of trouble uncomment the following line to print debugging information

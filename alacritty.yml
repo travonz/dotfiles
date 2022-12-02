@@ -34,5 +34,5 @@ mouse:
 # Spawn new instance in same directory
 key_bindings:
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
-  - { key: F,   mods: Control, command: { program: "alacritty", args: ["-e", "fzf"] } }
+    #  - { key: F,   mods: Control, command: { program: "alacritty", args: ["-e", "fzf"] } }
 

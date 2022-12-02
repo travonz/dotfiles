@@ -10,6 +10,7 @@ alias mv='mv -i'
 alias rm='echo "Use del or /bin/rm"'
 alias cp='cp -i'
 alias del='/usr/bin/trash-put'
+alias less='less -M'
 
 PATH=$PATH:/home/bin
 #CCACHE_DIR=/tmp/ccache
@@ -30,6 +31,8 @@ alias pp2="xclip -rmlastnl -o -selection secondary 2> /dev/null"
 alias pp3="xclip -rmlastnl -o -selection clipboard 2> /dev/null"
 #alias file='file -S'
 
+alias turbostat="turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC_MHz,CoreTmp,GFXMHz,PkgWatt"
+
 # get error messages from journalctl
 alias jctl="sudo journalctl -p 3 -xb"
 
@@ -45,11 +48,13 @@ alias e='nvim'
 alias evrc='nvim ~/.config/nvim/init.vim'
 alias eawrc='nvim ~/.config/awesome/rc.lua'
 #alias ms='man -l /home/vault/shortcut.1'
-#alias fox='cd ~/pkg/fox/fox'
+alias cdfox='cd ~/pkg/fox/fox'
 
 alias poweroff='sudo /sbin/poweroff'
-#alias of='source /home/bin/initializeOpenFOAM'
-alias of='source ~/OpenFOAM/OpenFOAM-8/etc/bashrc'
+
+alias of='source /opt/OpenFOAM/OpenFOAM-10/etc/bashrc'
+alias paraFoam='paraFoam -builtin'
+
 #alias plk='source ~/Projects/plk/etc/bashrc; cd $PLK_PREFIX_DIR'
 
 export TERM="alacritty"

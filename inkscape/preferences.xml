@@ -125,8 +125,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="80.4818"
-         height="84.593" />
+         width="672.75590551181"
+         height="124.724409448821" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -162,8 +162,8 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="6.17583"
-         ry="5.97546"
+         rx="3.86308880302849"
+         ry="3.86308880302849"
          arc_type="0" />
       <eventcontext
          id="star"
@@ -341,8 +341,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="422.142"
-       y="189.856"
+       x="75.1493009004832"
+       y="97.4337732516232"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -401,6 +401,13 @@
        id="paintbucket"
        style="fill:#a0a0a0;stroke:none;"
        usecurrent="1" />
+    <eventcontext
+       id="marker"
+       selcue="1"
+       gradientdrag="1" />
+    <group
+       id="geometric"
+       mode="drag" />
   </group>
   <group
      id="palette">
@@ -521,7 +528,8 @@
   </group>
   <group
      id="colorselector"
-     page="1" />
+     page="1"
+     switcher="1" />
   <group
      id="embedded">
     <group
@@ -534,7 +542,8 @@
        panel_border="0" />
   </group>
   <group
-     id="dialogs">
+     id="dialogs"
+     traceliveUpdate="1">
     <group
        id="toolbox" />
     <group
@@ -546,7 +555,8 @@
        id="textandfont" />
     <group
        id="transformation"
-       applyseparately="0" />
+       applyseparately="0"
+       rotateCounterClockwise="1" />
     <group
        id="align" />
     <group
@@ -566,7 +576,7 @@
     <group
        id="preferences"
        state="1"
-       page="34" />
+       page="1" />
     <group
        id="gradienteditor" />
     <group
@@ -575,25 +585,30 @@
        id="export"
        default=""
        append_extension="1"
-       path="">
+       path=""
+       defaultopts="1">
       <group
-         id="exportarea" />
+         id="exportarea"
+         value="drawing" />
       <group
          id="defaultxdpi" />
+      <group
+         id="batchexportarea"
+         value="layer" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/xavier/Documents/perso/AARCHIVER"
+       path="/home/xavier/Documents/8.Presentations/report/2022-08-18_结束报告/res"
        use_current_dir="1" />
     <group
        id="save_copy"
-       default=""
+       default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="" />
+       path="/home/xavier/Documents/6.Manufacturing/2.MfgInstructions/svg" />
     <group
        id="open"
        enable_preview="1"
@@ -601,9 +616,9 @@
     <group
        id="import"
        enable_preview="1"
-       path="/tmp/"
+       path="/tmp/images/"
        ask="1"
-       ask_svg="1"
+       ask_svg="0"
        link="embed"
        scale="auto"
        import_mode_svg="include"
@@ -612,9 +627,11 @@
        id="debug"
        redirect="0" />
     <group
-       id="clonetiler" />
+       id="clonetiler"
+       dotrace="0" />
     <group
-       id="gridtiler" />
+       id="gridtiler"
+       SpacingType="20" />
     <group
        id="extension-error"
        show-on-startup="0" />
@@ -646,6 +663,9 @@
        id="colorpickerwindow" />
     <group
        id="undo-history" />
+    <group
+       id="printing"
+       asbitmap="0" />
   </group>
   <group
      id="printing">
@@ -657,6 +677,7 @@
   </group>
   <group
      id="options"
+     rotationlock="1"
      onimport="0">
     <group
        id="renderingcache"
@@ -696,7 +717,7 @@
        value="4.0" />
     <group
        id="grabsize"
-       value="3" />
+       value="11" />
     <group
        id="displayprofile"
        enable="0"
@@ -804,16 +825,16 @@
        value="0" />
     <group
        id="stickyzoom"
-       value="0" />
+       value="1" />
     <group
        id="selcue"
        value="2" />
     <group
        id="transform"
        stroke="0"
-       rectcorners="1"
-       pattern="1"
-       gradient="1" />
+       rectcorners="0"
+       pattern="0"
+       gradient="0" />
     <group
        id="dash"
        scale="1" />
@@ -836,7 +857,8 @@
     <group
        id="maskobject"
        topmost="1"
-       remove="1" />
+       remove="1"
+       grouping="0" />
     <group
        id="blurquality"
        value="0" />
@@ -925,13 +947,16 @@
        partialdynamic="0" />
     <group
        id="boot"
+       theme="custom"
        canvas="dark"
-       theme="symbolic">
+       enabled="0">
       <group
          id="shown"
          ver1.1="1"
          ver1.1.1="1"
-         ver1.1.2="1" />
+         ver1.1.2="1"
+         ver1.2="1"
+         ver1.2.1="1" />
     </group>
     <group
        id="rendering" />
@@ -939,12 +964,40 @@
        id="font"
        unitType="2"
        scaleLineHeightFromFontSIze="1" />
+    <group
+       id="snapping"
+       snap-global-toggle="0" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.output.png.inkscape.png_bitdepth="99"
+     org.inkscape.output.png.inkscape.png_compression="6"
+     org.inkscape.output.png.inkscape.png_antialias="2"
+     org.inkscape.input.svg.scale="auto"
+     org.inkscape.input.dxf_input.encoding="latin_1"
+     org.inkscape.print.emf.FixPPTCharPos="0"
+     org.inkscape.print.emf.FixPPTDashLine="0"
+     org.inkscape.print.emf.FixPPTGrad2Polys="0"
+     org.inkscape.print.emf.FixPPTLinGrad="0"
+     org.inkscape.print.emf.FixPPTPatternAsHatch="0"
+     org.inkscape.print.emf.FixImageRot="0"
+     org.inkscape.print.emf.textToPath="1"
+     org.inkscape.print.wmf.FixPPTCharPos="0"
+     org.inkscape.print.wmf.FixPPTDashLine="0"
+     org.inkscape.print.wmf.FixPPTGrad2Polys="0"
+     org.inkscape.print.wmf.FixPPTPatternAsHatch="0"
+     org.inkscape.print.wmf.textToPath="1"
+     org.inkscape.input.eps.autorotate="None"
+     org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5"
+     org.inkscape.input.svg.do_not_ask="1"
+     org.inkscape.filter.markers_stroke_paint.type="solid"
+     org.inkscape.filter.markers_stroke_paint.tab="object"
+     org.inkscape.filter.markers_stroke_paint.__live_effect__="0"
+     org.inkscape.filter.extract_image.filepath="/tmp/images/"
+     org.inkscape.filter.extract_image.linkextracted="0" />
   <group
      id="desktop"
-     style="fill:none;stroke:#ff0000;stroke-width:0.37795276;-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-size:39.99987411px;font-weight:bold;text-anchor:middle;text-align:center">
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:21.33333333px;text-anchor:middle;text-align:center;fill:#e6e6e6;stroke-width:3.26929134;stroke-linejoin:round;stroke:#000000">
     <group
        width="640"
        height="480"
@@ -972,11 +1025,20 @@
      id="toolbox"
      icononly="1"
      secondary="2"
+     simplesnap="0"
      small="2">
     <group
        id="tools"
        icononly="1"
-       small="0" />
+       small="0"
+       iconsize="32"
+       width="41">
+      <group
+         id="buttons" />
+    </group>
+    <group
+       id="controlbars"
+       iconsize="32" />
   </group>
   <group
      id="iconpreview"
@@ -1052,17 +1114,19 @@
   <group
      id="theme"
      defaultPreferDarkTheme="0"
-     defaultGtkTheme="Adwaita"
      defaultIconTheme="Adwaita"
-     symbolicIcons="1"
-     preferDarkTheme="1"
-     darkTheme="1"
+     defaultGtkTheme="Adwaita"
+     narrowSpinButton="1"
+     preferDarkTheme="0"
+     darkTheme="0"
+     symbolicIcons="0"
+     symbolicDefaultBaseColors="1"
+     symbolicDefaultHighColors="1"
      menuIcons_canvas="0"
      menuIcons_layers="0"
      menuIcons_objects="0"
-     symbolicDefaultBaseColors="1"
-     symbolicDefaultHighColors="1"
-     gtkTheme="Adwaita">
+     gtkTheme="Adwaita"
+     iconTheme="multicolor">
     <group
        id="Adwaita"
        symbolicBaseColor="4008635647"
@@ -1071,18 +1135,23 @@
        symbolicErrorColor="3422552319" />
     <group
        id="hicolor"
-       symbolicBaseColor="4008635647"
-       symbolicSuccessColor="648766207"
+       symbolicBaseColor="775173887"
+       symbolicSuccessColor="869366527"
        symbolicWarningColor="4118348031"
        symbolicErrorColor="3422552319" />
     <group
        id="multicolor"
-       symbolicBaseColor="3857049087"
-       symbolicSuccessColor="3435973887"
-       symbolicWarningColor="2155905279"
-       symbolicErrorColor="2155905279" />
+       symbolicBaseColor="255"
+       symbolicSuccessColor="10029567"
+       symbolicWarningColor="4279865599"
+       symbolicErrorColor="10086143" />
   </group>
   <group
      id="live_effects"
      flattening="0" />
+  <group
+     id="statusbar">
+    <group
+       id="visibility" />
+  </group>
 </inkscape>

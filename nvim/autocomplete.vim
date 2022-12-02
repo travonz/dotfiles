@@ -35,7 +35,8 @@ snippet = {
       end,
     },
 
-mapping = {
+mapping = cmp.mapping.preset.insert({
+    -- Your configuration here.
 -- Default mapping to scroll up and down: <C-p> and <C-n>
 --      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 --      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -46,7 +47,7 @@ mapping = {
         c = cmp.mapping.close(),
       }),
       ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    },
+    }),
 
   sources = cmp.config.sources({
   { name = 'nvim_lsp' },
@@ -61,14 +62,16 @@ mapping = {
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
-    sources = {
+ mapping = cmp.mapping.preset.cmdline(),
+ sources = {
         { name = 'buffer' }
-        }
-    })
+    }
+})
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
+ mapping = cmp.mapping.preset.cmdline(),
+ sources = cmp.config.sources({
     { name = 'path' }
     }, {
     { name = 'cmdline' }

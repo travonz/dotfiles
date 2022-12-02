@@ -61,6 +61,9 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'nvim-treesitter/playground'
 
+" Keep the header line of the function you are scrolling at the top line
+Plug 'nvim-treesitter/nvim-treesitter-context'
+
 " Plug 'preservim/nerdcommenter' " Comment and uncomment lines TO BE TESTED
 
 " Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
@@ -72,6 +75,10 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'BurntSushi/ripgrep'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+" C++ Debuggers
+" Plug 'mfussenegger/nvim-dap'
+ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
 call plug#end()
 
